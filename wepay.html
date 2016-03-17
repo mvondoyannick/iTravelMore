@@ -1,0 +1,186 @@
+<div data-page="wepay" class="page">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left"><a href="i.html" class="link icon-only"><i class="icon icon-back"></i></a></div>
+            <div class="center">WePay</div>
+            <div class="right"><a href="#" class="back link icon-only">About</a></div>
+        </div>
+        <div class="toolbar tabbar subnavbar">
+            <div class="toolbar-inner">
+                <a href="#info" id="tab_info" class="tab-link active">Informations</a>
+                <a href="#liste" class="tab-link">Listing</a>
+                <a href="#config" class="tab-link">Configurer</a>
+            </div>
+        </div>
+    </div>
+    <div class="page-content with-subnavbar">
+    	<div class="tabs">
+    		<div id="info" class="tab active">
+    			<div style="text-align: center;">
+		            <p>
+		                <img src="img/tag.png" alt="">
+		            </p>
+		            <p>
+		                Bienvenue sur votre compte wepay.
+		            </p>
+		        </div>
+		        
+		        <a href="#" class="floating-button color-pink wepay-create">
+		            <i class="fa fa-check"></i>
+		        </a>
+    		</div>
+    		<div id="liste" class="tab ">
+    			<div style="text-align: center;">
+		            <p>
+		                <img src="img/document.png" alt="">
+		            </p>
+		            <p>
+		                Liste des action effectuées avec wepay.
+		            </p>
+		        </div>
+		        
+		        <a href="#" class="floating-button color-pink wepay-create">
+		            <i class="fa fa-bars"></i>
+		        </a>
+		        
+    			<div class="list-block">
+			      <ul>
+			        <li><a href="#" class="item-link item-content">
+			            <div class="item-media"><i class="icon icon-f7"></i></div>
+			            <div class="item-inner"> 
+			              <div class="item-title">Ivan Petrov</div>
+			              <div class="item-after">CEO</div>
+			            </div></a></li>
+			        <li><a href="#" class="item-link item-content">
+			            <div class="item-media"><i class="icon icon-f7"></i></div>
+			            <div class="item-inner"> 
+			              <div class="item-title">John Doe</div>
+			              <div class="item-after">Cleaner</div>
+			            </div></a></li>
+			        <li><a href="#" class="item-link item-content">
+			            <div class="item-media"><i class="icon icon-f7"></i></div>
+			            <div class="item-inner"> 
+			              <div class="item-title">Jenna Smith</div>
+			            </div></a></li>
+			      </ul>
+			    </div>
+    		</div>
+    		<div id="config" class="tab ">
+    			<div style="text-align: center;">
+		            <p>
+		                <img src="img/user.png" alt="">
+		            </p>
+		            <p>
+		                Bienvenue sur WePay, la solution de paiement en un click.
+		            </p>
+		        </div>
+		        <div class="content-block-title">Modifier informations personnelles</div>
+    			<form id="wepay" class="store-data list-block">
+		            <ul>
+		                <li>
+		                    <div class="item-content">
+		                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+		                        <div class="item-inner">
+		                            <div class="item-title floating-label">Nom</div>
+		                            <div class="item-input">
+		                                <input type="text" name="nom" id="nom" placeholder="Votre nom"/>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li>
+		                    <div class="item-content">
+		                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+		                        <div class="item-inner">
+		                            <div class="item-title floating-label">Prénom</div>
+		                            <div class="item-input">
+		                                <input type="text" name="prenom" placeholder="Votre prénom"/>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li>
+		                    <div class="item-content">
+		                        <div class="item-media"><i class="icon icon-form-email"></i></div>
+		                        <div class="item-inner">
+		                            <div class="item-title floating-label">Adresse E-mail</div>
+		                            <div class="item-input">
+		                                <input type="email" name="email" placeholder="Votre adresse email"/>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li>
+		                    <div class="item-content">
+		                        <div class="item-media"><i class="icon icon-form-tel"></i></div>
+		                        <div class="item-inner">
+		                            <div class="item-title floating-label">Numero téléphone</div>
+		                            <div class="item-input">
+		                                <input type="tel" name="phone" placeholder="Votre numero de telephone"/>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </li>
+		            </ul>
+		        </form>
+		        
+		        <div class="content-block-title">Modifier mot de passe wepay</div>
+		        <form id="wepay-pwd" class="store-data list-block">
+		            <ul>
+		                <li>
+		                    <div class="item-content">
+		                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+		                        <div class="item-inner">
+		                            <div class="item-title floating-label">Ancien Mot de passe</div>
+		                            <div class="item-input">
+		                                <input type="text" name="ancien-pwd" id="ancien-pwd" placeholder="Ancien mot de passe"/>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li>
+		                    <div class="item-content">
+		                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+		                        <div class="item-inner">
+		                            <div class="item-title floating-label">Nouveau mot de passe</div>
+		                            <div class="item-input">
+		                                <input type="password" name="new-pwd" placeholder="Nouveau mot de passe"/>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li>
+		                    <div class="item-content">
+		                        <div class="item-media"><i class="icon icon-form-email"></i></div>
+		                        <div class="item-inner">
+		                            <div class="item-title floating-label">Re-nouveau mot de passe</div>
+		                            <div class="item-input">
+		                                <input type="password" name="re-new-pwd" placeholder="Re Nouveau mot de passe"/>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </li>
+		            </ul>
+		        </form>
+		        
+		        <div class="content-block">
+			      	<div class="row">
+			          <!-- Each "cell" has col-[widht in percents] class -->
+			          <div class="col-50">
+			            <a href="#" class="button button-big active btn-submit">
+			            	Enregistrer
+			            </a>
+			          </div>
+			          <div class="col-50">
+			            <a href="#" class="button button-big bg-red">
+			            	Annuler
+			            </a>
+			          </div>
+			        </div>		        
+		      </div>
+    		</div>
+    	</div>
+        
+        
+    </div>
+</div>

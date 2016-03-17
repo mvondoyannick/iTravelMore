@@ -1,0 +1,110 @@
+{
+  "_args": [
+    [
+      "flickrapi",
+      "/home/toshiba"
+    ]
+  ],
+  "_from": "flickrapi@*",
+  "_id": "flickrapi@0.3.36",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/flickrapi",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "email": "pomax@nihongoresources.com",
+    "name": "pomax"
+  },
+  "_npmVersion": "2.11.3",
+  "_phantomChildren": {
+    "aws-sign": "0.3.0",
+    "cookie-jar": "0.3.0",
+    "forever-agent": "0.5.2",
+    "form-data": "0.1.4",
+    "hawk": "1.0.0",
+    "http-signature": "0.10.1",
+    "inherits": "2.0.1",
+    "json-stringify-safe": "5.0.1",
+    "lru-cache": "2.7.0",
+    "mime": "1.2.11",
+    "node-uuid": "1.4.3",
+    "oauth-sign": "0.3.0",
+    "qs": "0.6.6",
+    "sigmund": "1.0.1",
+    "tunnel-agent": "0.3.0"
+  },
+  "_requested": {
+    "name": "flickrapi",
+    "raw": "flickrapi",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/flickrapi/-/flickrapi-0.3.36.tgz",
+  "_shasum": "8312ef91bc59e90d6170a3d2ba19960045cbc8c8",
+  "_shrinkwrap": null,
+  "_spec": "flickrapi",
+  "_where": "/home/toshiba",
+  "author": {
+    "email": "pomax@nihongoresources.com",
+    "name": "Pomax"
+  },
+  "bugs": {
+    "url": "https://github.com/Pomax/node-flickrapi/issues"
+  },
+  "dependencies": {
+    "async": "~0.2.10",
+    "glob": "~3.2.6",
+    "open": "0.0.x",
+    "progress": "1.1.4",
+    "prompt": "0.2.x",
+    "request": "2.26.x"
+  },
+  "description": "A Node.js, and client-side, implementation of the Flickr API (for use with an API key, server-side oauth enabled)",
+  "devDependencies": {
+    "express": "~3.4.7",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "habitat": "~1.1.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "8312ef91bc59e90d6170a3d2ba19960045cbc8c8",
+    "tarball": "http://registry.npmjs.org/flickrapi/-/flickrapi-0.3.36.tgz"
+  },
+  "engines": {
+    "node": ">=0.8"
+  },
+  "gitHead": "5a4bbb166501409b4c9b11e73098ee7e27f64b93",
+  "homepage": "https://github.com/Pomax/node-flickrapi#readme",
+  "keywords": [
+    "api",
+    "flickr",
+    "flickrapi",
+    "oauth"
+  ],
+  "license": "MIT",
+  "main": "./src/FlickrAPI",
+  "maintainers": [
+    {
+      "name": "pomax",
+      "email": "pomax@nihongoresources.com"
+    }
+  ],
+  "name": "flickrapi",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pomax/node-flickrapi.git"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "version": "0.3.36"
+}
