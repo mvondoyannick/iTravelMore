@@ -211,9 +211,17 @@ function returnPosition(){
             url:    'http://ip-api.com/json',
             success: function(data){
                 console.log(data);
+
+                //on enregistre la position en cache
+                localStorage.setItem('geolocation_city', data.city);
+                localStorage.setItem('geolocation_country', data.country);
+                localStorage.setItem('geolocation_lat', data.lat);
+                localStorage.setItem('geolocation_lon', data.lon);
+                /* ====================== fin =====================*/
+
                 myApp.addNotification({
-                    message: " <i class='fa fa-mixcloud'></i> localisé à : "+data.city,
-                    hold: 10000,
+                    message: " <i class='fa fa-mixcloud'></i> localisé à : "+data.city+" @ "+data.country ,
+                    hold: 7000,
                     button:{
                         text: 'Voir'
                     },
@@ -1610,8 +1618,13 @@ myApp.onPageInit('fin', function(page){
 
     //
     function moveMapToBerlin(map){
-        map.setCenter({lat:52.5159, lng:13.3777});
-        map.setZoom(14);
+        map.setCenter({lat:localStorage.getItem('geolocation_lat'), lng:localStorage.getItem('geolocation_lon')});
+        map.setZoom(13);
+        var positionMarker = new H.map.Marker({
+            lat:localStorage.getItem('geolocation_lat'),
+            lng:localStorage.getItem('geolocation_lon')
+        });
+        map.addObject(positionMarker);
     }
 
     //Step 1: initialize communication with the platform
@@ -1637,6 +1650,7 @@ myApp.onPageInit('fin', function(page){
 
     // Now use the map as required...
         moveMapToBerlin(map);
+
     });
 
 /* ==== la gestion des classes ==== */
