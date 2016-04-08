@@ -1,5 +1,5 @@
 //id du testeur
-var id = '0.0.1.e';
+var id = '0.0.1.d';
 
 var contributors = {
     'developers' : {
@@ -123,7 +123,6 @@ var myApp = new Framework7({
     modalPreloaderTitle: 'chargement ...',
     hideNavbarOnPageScroll: false,
     materialRipple: true,
-    //hideNavbarOnPageScroll: false,
     hideToolbarOnPageScroll: true,
     hideTabbarOnPageScroll: true,
     fastClicks: true
@@ -738,10 +737,10 @@ myApp.onPageInit('about', function (page) {
     $('.version').text(id);
 
     //les developpeurs
-    $('.01').text(contributors.developers[1].name);
-    $('.02').text(contributors.developers[2].name);
-    $('.03').text(contributors.developers[3].name);
-    $('.04').text(contributors.developers[4].name);
+    $('.o1').text(contributors.developers[1].name);
+    $('.o2').text(contributors.developers[2].name);
+    $('.o3').text(contributors.developers[3].name);
+    $('.o4').text(contributors.developers[4].name);
 
     $('.1').text(contributors.developers[1].fonction);
     $('.2').text(contributors.developers[2].fonction);
@@ -1747,7 +1746,7 @@ if (!navigator.onLine){
  */
 
 myApp.onPageInit('page-achat', function (page){
-    $$(page.container).find('.achat').text('Bienvenue chez '+page.query.agence);
+    $$(page.container).find('.achat').text(page.query.agence);
     console.log('service achat initialisé');
     var agence = page.query.agence;
     $.cookie('agence', agence);
@@ -2216,15 +2215,92 @@ myApp.onPageInit('color-themes', function (page) {
 
 
 /* ===== Mobile banking (MTN & ORANGE) ===== */
-myApp.onPageInit('mtn-mobile-money', function (page) {
+myApp.onPageInit('orange-money', function (page) {
     console.log('Services page initialized');
     console.log(page.query);
 
+    //information sur la page securisée
+    myApp.addNotification({
+        message: '<i class="fa fa-lock"></i> Cette page est sécurisée',
+        hold: 2500,
+        button:{
+            text: 'J\'ai compris'
+        }
+    });
+
+    //on recupere les information sur le numero de telephone
+    var numero = $('#phone-orange');
+    console.log(numero.val());
+    $('#next').on('click', function(e){
+        e.preventDefault();
+        if (numero.val() == ''){
+            //on retourne un message
+            myApp.addNotification({
+                message: 'Le numero de telephone semble etre absent.',
+                hold: 5000,
+                button: {
+                    text: 'ok'
+                }
+            });
+        }
+        if ((numero.val()).length > 9){
+            myApp.addNotification({
+                message: 'Le numero fournis depasse neuf (09) chiffres',
+                hold: 3500,
+                button: {
+                    text: 'ok, compris'
+                }
+            });
+        }
+        else if ((numero.val()).length < 9){
+            myApp.addNotification({
+                message: 'Le numero fournis est inferieur a neuf (09) chiffres',
+                hold: 3500,
+                button: {
+                    text: 'ok, compris'
+                }
+            });
+        }
+        else if ((numero.val()).charAt(0) != '6'){
+            //on doit recherche la composition des numeros Orange
+            myApp.addNotification({
+                message: 'Ce numero ne semble pas etre un numero Orange Cameroun',
+                hold: 3500,
+                button: {
+                    text: 'ok, compris'
+                }
+            });
+        }
+        else {
+            //on renvoi une forme d'alert
+            myApp.alert('Vous allez recevoir une notificaation via SMS.', 'Message Apps', function(){
+                //on redirige vers la page suivante apres verification du compte numero et autres
+                mainView.router.load({
+                    url         : 'code-receive.html?solution=om&number='+numero.val(),
+                    animatePages: true
+                });
+            });
+        }
+    });
     //on recherche la section ou on doit rentrer les informations
     $$(page.container).find('.ag-payment').text('Paiement via '+page.query.paymentMode);
     $.cookie('paymode', page.query.paymentMode);
 
 });
+
+
+
+/* ===== reception du code par le client ===== */
+myApp.onPageInit('code-receive', function (page) {
+    console.log('page de reception du code');
+    console.log(page.query);
+
+    //on recherche la section ou on doit rentrer les informations
+    $$(page.container).find('.ag-payment').text('Payer mon billet avec '+page.query.paymentMode);
+    $.cookie('paymode', page.query.paymentMode);
+
+});
+
 
 
 /* ===== MTN credit pay ===== */

@@ -7,7 +7,7 @@
 <name>Place</name>
 <content src="index.html"/>
 <access origin="*"/>
-<preference name="ios-target" value="6"/>
 <preference name="ios-configuration" value="adhoc"/>
+<preference name="deployment-target" value="6"/>
 <!--creationInfo:{"src":"","projectTypeName":"com.intel.xdk.projecttype.webapp"}-->
 <preference name="debuggable" value="false"/></widget>
